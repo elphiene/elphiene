@@ -1,0 +1,196 @@
+
+ `<!DOCTYPE html>" - Defines the document type as a HTML5 doc. It can only appear once at the top of the page, before you write any other tags.
+`<html>` - Root element of a HTML
+`<head>` - Contains meta information
+`<title>Page Title</title>`  Specifies page title (shown in browser title bar or page tab)
+`</head>` Ends the head section
+`<body>` - Defines where the pages body starts. A container for all visable contents: headings, paragraphs, images, hyperlinks, tables, lists, etc.
+
+`<h1>My First Heading</h1>` - Defines a large heading
+`<p>My first paragraph.</p>` - Defines a paragraph
+
+`</body>`
+`</html>` 
+
+Formatted:
+
+<!DOCTYPE html>  
+<html>  
+<head>  
+<title>Page Title</title>  
+</head>  
+<body>  
+  
+<h1>My First Heading</h1>  
+<p>My first paragraph.</p>  
+  
+</body>  
+</html>
+
+## HTML Elements
+An 'element' in HTML in everything from the start of a tag to the end:
+	`<h1>My First Heading</h1>
+	`<p>My first paragraph.</p>`
+
+HTML Elements with no content have no end tag
+
+### Headings
+Headings are defined with `<h1>`to `<h6>`
+They work in a similar way to markdown, where `<h1>` is your largest heading, working down to `<h6>` as your smallest.
+	<h1>This is heading 1</h1>  
+	<h2>This is heading 2</h2>  
+	<h3>This is heading 3</h3>
+	`<h1 style="font-size:60px;">Heading 1</h1>`
+	<h1 style="font-size:60px;">Heading 1</h1>
+### Paragraphs
+`<p>  
+`This paragraph  
+`contains a lot of lines  
+`in the source code,  
+`but the browser  
+`ignores it.
+`</p>`
+
+  
+`<p>  
+`This paragraph  
+`contains         a lot of spaces  
+`in the source         code,  
+`but the        browser  
+`ignores it.  
+`</p>
+
+<p>  
+This paragraph  
+contains a lot of lines  
+in the source code,  
+but the browser  
+ignores it.  
+</p>
+  
+<p>  
+This paragraph  
+contains         a lot of spaces  
+in the source         code,  
+but the        browser  
+ignores it.  
+</p>
+`<pre> </pre>` defines pre-formatted text. Preserves spaces and line breaks
+	 `<pre>  
+	  `My Bonnie lies over the ocean.  
+  
+	  `My Bonnie lies over the sea.  
+  
+	  `My Bonnie lies over the ocean.  
+  
+	  `Oh, bring back my Bonnie to me.  
+	`</pre>
+<pre>  
+  My Bonnie lies over the ocean.  
+  
+  My Bonnie lies over the sea.  
+  
+  My Bonnie lies over the ocean.  
+  
+  Oh, bring back my Bonnie to me.  
+</pre>
+
+### Links
+Links to other pages are defined with `<a>`
+
+	`<a href="https://www.w3schools.com">This is a link</a>`
+<a href="https://www.w3schools.com">This is a link</a>
+
+### Images
+Images are defined with `<img>`
+The image source file, alt text, width, and height, are all provided using attributes.
+
+### Empty Elements
+An element that doesn't contain content.
+`<br>` defines a line break, and therefore doesn't contain any content, or have an end-tag
+`<hr>` defines a thematic break in your page, usually displayed as a horizontal rule.
+
+## Attributes
+Attributes can be applied to all HTML elements, and provide additional information about the element.
+Attributes are always specified in the start tag.
+Typically come in name/value pairs ( name="value") (height="100px")
+	`<a>` is used to define a hyperlink, but the attribute `href` specifies what page that hyperlink goes to.
+	`<a> This is a link</a>` - Would show as a hyperlink, but wouldn't go anywhere.
+
+
+
+### Image Attributes
+When using `<img>`, you should include the width + height attributes.
+	`<img src="img_girl.jpg" width="500" height="600">`
+Use the `<alt>` attribute to add alternate text to an image, for screenreaders/image display problems.
+		`<img src="img_girl.jpg" alt="Girl with a jacket">`
+		
+### src Attribute
+`src` can be applied to the `<img>` element. `src` specifies the image path.	
+**Absolute URL** - Links to an external image that is hosted on another website. 
+	Example: src="https://www.w3schools.com/images/img_girl.jg".
+
+**Relative URL** - Links to an image that is hosted within the website. Here, the URL does not include the domain name. If the URL begins without a slash, it will be relative to the current page.
+	Example: src="img_girl.jpg". 
+If the URL begins with a slash, it will be relative to the domain. 
+	Example: src="/images/img_girl.jpg".
+
+### Style Attributes
+`style` adds styles to an element, such as colour, font, size, etc.
+Uses the format "property:value" 
+`<tagname style="property:value;">`
+
+**Color**
+	`<p style="color:red;">This is a red paragraph.</p>`
+	<p style="color:red;">This is a red paragraph.</p>
+**Background**
+`<body style="background-color:powderblue;">  
+
+
+
+
+### Lang Attribute
+Should be included inside the `<html>` tag, declares the language of your page. For assisting search engines.
+	 `<html lang="en">`
+You can also add a country code to the `lang` attribute.
+	`<html lang="en-AU">`
+		Common ISO 3166-1 Alpha-2 Codes
+		- **US:** United States
+		- **GB:** United Kingdom
+		- **FR:** France
+		- **DE:** Germany
+		- **ES:** Spain
+		- **JP:** Japan
+		- **CN:** China
+		- **IN:** India
+		- **AU:** Australia
+
+Title Attribute
+Provides extra information as a tooltip when you hover your mouse over the element.
+	`<p title="I'm a tooltip">This is a paragraph.</p>`
+	
+## HTML Page Structure
+
+`<html>
+	`<head>
+		`<title>Page Title</title>`
+	`</head>`
+	`<body>`
+		`<h1> This is a heading!</h1>
+		`<p>This is a paragraph.</p>
+		`<p>THIS IS A PARAGRAPH</p>`
+	`</body>`
+	`</html>`
+
+
+<html>
+	<head>
+		<title>Page Title</title>
+	</head>
+	<body>
+		<h1> This is a heading!</h1>
+		<p>This is a paragraph.</p>
+		<p>THIS IS A PARAGRAPH</p>
+	</body>
+	</html>
+
