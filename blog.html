@@ -1,88 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-AU">
-<head>
-<title>elphiene's blog ✩ </title>
-</head>	<script type="text/javascript"> 
-title = "elphiene's blog ✩ ";
-position = 0;
-function scrolltitle() {
-    document.title = title.substring(position, title.length) + title.substring(0, position); 
-    position++;
-    if (position > title.length) position = 0;
-    titleScroll = window.setTimeout(scrolltitle,170);
-}
-scrolltitle();
-	</script>
-<body>
-  <style>
-h1 {
-  color:#73AFE8;
-  text-align: center;
-  }
+    <head>
+        <title>elphiene's blog ✩</title>
+    </head>
+    <script type="text/javascript">
+        title = "elphiene's blog ✩ ";
+        position = 0;
+        function scrolltitle() {
+            document.title =
+                title.substring(position, title.length) +
+                title.substring(0, position);
+            position++;
+            if (position > title.length) position = 0;
+            titleScroll = window.setTimeout(scrolltitle, 170);
+        }
+        scrolltitle();
+    </script>
+    <body>
+        <style>
+            h1 {
+                color: #73afe8;
+                text-align: center;
+            }
 
-  body {
-  padding-left: 50px;
-  padding-right: 50px;
-  background-color: #1C1E1F;
-  background-image: linear-gradient(to bottom right, #263140, #000000);
-  color:white;
-  font-family: Tahoma, sans-serif;
-  height: 1800px;
-  }
-  
-  header {
-  background-color:#1253E5;
-  border-radius: 19px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin-bottom: 15px;
-}
+            body {
+                padding-left: 50px;
+                padding-right: 50px;
+                background-color: #1c1e1f;
+                background-image: linear-gradient(
+                    to bottom right,
+                    #263140,
+                    #000000
+                );
+                color: white;
+                font-family: Tahoma, sans-serif;
+                height: 1800px;
+            }
 
-#headerscroll {
-  width: 100%;
-  height: auto;
-}
+            header {
+                background-color: #1253e5;
+                border-radius: 19px;
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                margin-bottom: 15px;
+            }
 
-#blog {
-  background-color: #1253E5;
-  background-image: linear-gradient(to bottom right, #9CB9F7, #3E72E6, #3F73E8, #023CBF);
-  border-radius: 19px;
-  border: 5px solid #0844CC;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 5px;
-  padding-bottom: 20px;
-  text-align: center;
-  height: auto;
-  
-}
-#bloglinks {
-  background-color:#8bacf3 ;
-  border-radius:19px ;
-  border:5px solid #0844CC   ;
-  height: 200px; /* Set the desired height of the box */
-   border: 1px solid #ccc; /* Add a border for visibility */
-   overflow: auto; /* Enable scrolling when content exceeds the box dimensions */
-  padding-left: 30px;
-  padding-right: 100px;
-  padding-top: 10px;
-  padding-bottom: 20px;
-   /* Add some padding inside the box */
-   text-align: left;
-  }
-  
-  </style>
-</body>
+            #headerscroll {
+                width: 100%;
+                height: auto;
+            }
 
-<header><img id="headerscroll"  src="elphiene-header.gif" height="auto"></header>
-<br>
-<div id="blog">
-  <h2>blog posts</h2>
-  <div id="bloglinks">
-	<p><b>17/10/25:</b> <a href="blog-oct-17-2025.html" style="color: white;"> my first blog!</a></p>
-	</div>
-	</div>
-	  
+            #blog {
+                background-color: #1253e5;
+                background-image: linear-gradient(
+                    to bottom right,
+                    #9cb9f7,
+                    #3e72e6,
+                    #3f73e8,
+                    #023cbf
+                );
+                border-radius: 19px;
+                border: 5px solid #0844cc;
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 5px;
+                padding-bottom: 20px;
+                text-align: center;
+                height: auto;
+            }
+            #bloglinks {
+                background-color: #8bacf3;
+                border-radius: 19px;
+                border: 5px solid #0844cc;
+                height: 200px; /* Set the desired height of the box */
+                border: 1px solid #ccc; /* Add a border for visibility */
+                overflow: auto; /* Enable scrolling when content exceeds the box dimensions */
+                padding-left: 30px;
+                padding-right: 100px;
+                padding-top: 10px;
+                padding-bottom: 20px;
+                /* Add some padding inside the box */
+                text-align: left;
+            }
+        </style>
+    </body>
+
+    <header>
+        <img id="headerscroll" src="elphiene-header.gif" height="auto" />
+    </header>
+    <br />
+    <div id="blog">
+        <h2>blog posts</h2>
+        <div id="bloglinks">
+            <p>
+                <b>17/10/25:</b>
+                <a href="blog-oct-17-2025.html" style="color: white">
+                    my first blog!</a
+                >
+            </p>
+        </div>
+    </div>
 </html>
