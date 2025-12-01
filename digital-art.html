@@ -1,94 +1,75 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-AU">
-<head>
-    <title>elphiene</title>
-        </head>	<script type="text/javascript">
-        title = "elphiene.com ✩ ";
-        position = 0;
-function scrolltitle() {
-    document.title = title.substring(position, title.length) + title.substring(0, position);
-    position++;
-    if (position > title.length) position = 0;
-    titleScroll = window.setTimeout(scrolltitle,170);
-}
-scrolltitle();
-	</script>
-<body>
-  <style>
-  h1 {
-  color:#73AFE8;
-  text-align: center;
-}
-
-body {
-  padding-left: 150px;
-  padding-right: 150px;
-  background-color: #1C1E1F;
-  background-image: linear-gradient(to bottom right, #263140, #000000);
-  color:white;
-  font-family: Tahoma, sans-serif;
-  }
-
-
-header {
-  background-color:#1253E5;
-  border-radius: 19px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin-bottom: 15px;
-}
-
-#headerscroll {
-  width: 100%;
-  height: auto;
-}
-
-#aboutme {
-  background-color: #1253E5;
-  background-image: linear-gradient(to bottom right, #9CB9F7, #3E72E6, #3F73E8, #023CBF);
-  border-radius: 19px;
-  border: 5px solid #0844CC;
-  padding-left: 60px;
-  padding-right: 100px;
-  padding-top: 10px;
-  padding-bottom: 20px;
-}
-
-#digital art {
-  background-color: #1253E5;
-  background-image: linear-gradient(to bottom right, #9CB9F7, #3E72E6, #3F73E8, #023CBF);
-  border-radius: 19px;
-  border: 5px solid #0844CC;
-  text-align: center;
-}
-
-#updates {
-  background-color: #1253E5;
-  background-image: linear-gradient(to bottom right, #9CB9F7, #3E72E6, #3F73E8, #023CBF);
-  border-radius: 19px;
-  border: 5px solid #0844CC;
-  padding-left: 60px;
-  padding-right: 100px;
-  padding-top: 10px;
-  padding-bottom: 20px;
-  height: 200px; /* Set the desired height of the box */
-  border: 1px solid #ccc; /* Add a border for visibility */
-  overflow: auto; /* Enable scrolling when content exceeds the box dimensions */
-  padding-left: 60px;
-  padding-right: 100px;
-  padding-top: 10px;
-  padding-bottom: 20px;
-   /* Add some padding inside the box */
-  }
-</style>
- <header><img id="headerscroll"  src="elphiene-header.gif" height="auto"></header>
- <div id="digital art">
-   <h2>digital art</h2>
-   <div id="photos">
-	<p>hi! this page is under construction right now. come back soon!</p>
-	<img style="align-items:center ;" src="ascii-webcam-art.png" alt= <a href="Generated using ASCII Art Archive"</a>
-
- </div>
-	</div>
+    <head>
+        <title>elphiene</title>
+        <link rel="icon" type="image/x-icon" href="favicon.png" />
+        <link rel="stylesheet" href="style.css" />
+        <meta charset="UTF-8" />
+        <meta name="description" content="Elphiene's digital art" />
+        <meta
+            name="keywords"
+            content="HTML, CSS, JavaScript, Elphiene's digital art"
+        />
+        <meta name="author" content="Elphiene" />
+        <meta name="year" content="2025" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script type="text/javascript">
+            (function () {
+                let title = "elphiene.com ✩ ";
+                let position = 0;
+                function scrolltitle() {
+                    document.title =
+                        title.substring(position, title.length) +
+                        title.substring(0, position);
+                    position++;
+                    if (position > title.length) position = 0;
+                    window.setTimeout(scrolltitle, 170);
+                }
+                scrolltitle();
+            })();
+        </script>
+    </head>
+    <body>
+        <header>
+            <img
+                id="headerscroll"
+                src="elphiene-header.gif"
+                alt="Elphiene header banner"
+                height="auto"
+            />
+        </header>
+        <ul>
+            <li>
+                <a href="index.html"><b>home</b></a>
+            </li>
+            <li>
+                <a href="blog.html"><b>blog</b></a>
+            </li>
+            <li>
+                <a href="photography.html"><b>photography</b></a>
+            </li>
+            <li>
+                <a href="digital-art.html"><b>digital art</b></a>
+            </li>
+            <li>
+                <a href="other-stuff.html"><b>other stuff</b></a>
+            </li>
+        </ul>
+        &nbsp;&nbsp;
+        <div id="digitalart">
+            <h2>digital art</h2>
+            <div id="photos">
+                <p>
+                    hi! this page is under construction right now. come back
+                    soon!
+                </p>
+                <img
+                    style="align-items: center"
+                    src="ascii-webcam-art.png"
+                    alt="ASCII webcam art"
+                />
+                <p>Generated using ASCII Art Archive</p>
+            </div>
+        </div>
+    </body>
+</html>

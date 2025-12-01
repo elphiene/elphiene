@@ -2,69 +2,43 @@
 <html lang="en-AU">
     <head>
         <title>october 17th 2025 ✩</title>
-    </head>
-    <script type="text/javascript">
-        title = "october 17th 2025 ✩ ";
-        position = 0;
-        function scrolltitle() {
-            document.title =
-                title.substring(position, title.length) +
-                title.substring(0, position);
-            position++;
-            if (position > title.length) position = 0;
-            titleScroll = window.setTimeout(scrolltitle, 170);
-        }
-        scrolltitle();
-    </script>
-    <body>
+        <link rel="icon" type="image/x-icon" href="favicon.png" />
+        <link rel="stylesheet" href="style.css" />
+        <meta charset="UTF-8" />
+        <meta name="description" content="Elphiene's blog - October 17th 2025" />
+        <meta
+            name="keywords"
+            content="HTML, CSS, JavaScript, Elphiene's blog"
+        />
+        <meta name="author" content="Elphiene" />
+        <meta name="year" content="2025" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script type="text/javascript">
+        (function() {
+            let title = "october 17th 2025 ✩ ";
+            let position = 0;
+            function scrolltitle() {
+                document.title =
+                    title.substring(position, title.length) +
+                    title.substring(0, position);
+                position++;
+                if (position > title.length) position = 0;
+                window.setTimeout(scrolltitle, 170);
+            }
+            scrolltitle();
+        })();
+        </script>
         <style>
-            h1 {
-                color: #73afe8;
-                text-align: center;
-            }
-
-            pre {
-                font-family: Tahoma, sans-serif;
-                font-size: 16px;
-                padding-left: 5px;
-                white-space: pre-wrap;
-            }
-
             body {
+                height: 1800px;
                 padding-left: 0px;
                 padding-right: 0px;
-                background-color: #1c1e1f;
-                background-image: linear-gradient(
-                    to bottom right,
-                    #263140,
-                    #000000
-                );
-                color: white;
-                font-family: Tahoma, sans-serif;
-                height: 1800px;
-            }
-
-            header {
-                background-color: #1253e5;
-                border-radius: 19px;
-                padding-left: 10px;
-                padding-right: 10px;
-                padding-top: 5px;
-                padding-bottom: 5px;
-                margin-bottom: 15px;
-            }
-
-            #headerscroll {
-                width: 100%;
-                height: auto;
-            }
-            h3 {
-                color: #73afe8;
-                text-align: left;
             }
         </style>
+    </head>
+    <body>
         <header>
-            <img id="headerscroll" src="elphiene-header.gif" height="auto" />
+            <img id="headerscroll" src="elphiene-header.gif" alt="Elphiene header banner" height="auto" />
         </header>
 
         <h3>my first blog post!</h3>
