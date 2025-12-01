@@ -3,303 +3,41 @@
     <head>
         <title>elphiene</title>
         <link rel="icon" type="image/x-icon" href="favicon.png" />
+        <link rel="stylesheet" href="style.css" />
         <meta charset="UTF-8" />
         <meta name="description" content="Elphiene's website" />
         <meta
             name="keywords"
+            blue
             content="HTML, CSS, JavaScript, Elphiene's website"
         />
         <meta name="author" content="Elphiene" />
         <meta name="year" content="2025" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script type="text/javascript">
+            (function () {
+                let title = "elphiene.com ✩ ";
+                let position = 0;
+                function scrolltitle() {
+                    document.title =
+                        title.substring(position, title.length) +
+                        title.substring(0, position);
+                    position++;
+                    if (position > title.length) position = 0;
+                    window.setTimeout(scrolltitle, 170);
+                }
+                scrolltitle();
+            })();
+        </script>
     </head>
-    <script type="text/javascript">
-        title = "elphiene.com ✩ ";
-        position = 0;
-        function scrolltitle() {
-            document.title =
-                title.substring(position, title.length) +
-                title.substring(0, position);
-            position++;
-            if (position > title.length) position = 0;
-            titleScroll = window.setTimeout(scrolltitle, 170);
-        }
-        scrolltitle();
-    </script>
     <body>
-        <style>
-            h1 {
-                color: #73afe8;
-                text-align: center;
-            }
-
-            body {
-                padding-right: 100px;
-                padding-left: 100px;
-                background-color: #1c1e1f;
-                background-image: linear-gradient(
-                    to bottom right,
-                    #082361,
-                    black
-                );
-                color: white;
-                font-family: Tahoma, sans-serif;
-                height: max-content;
-            }
-
-            header {
-                background-color: #1253e5;
-                border-radius: 19px;
-                padding-left: 10px;
-                padding-right: 10px;
-                padding-top: 5px;
-                padding-bottom: 5px;
-                margin-bottom: 15px;
-            }
-
-            p {
-                font-family: Tahoma, sans-serif;
-                font-size: 16px;
-                text-align: left;
-            }
-
-            pre {
-                font-family: Tahoma, sans-serif;
-                font-size: 16px;
-            }
-
-            #headerscroll {
-                width: 100%;
-                height: auto;
-            }
-
-            #instagram {
-                background-image: linear-gradient(
-                    to bottom right,
-                    #9cb9f7,
-                    #3e72e6,
-                    #3f73e8,
-                    #023cbf
-                );
-                border-radius: 20px;
-                border: 2px solid #1b4bb7;
-            }
-
-            #twitter {
-                background-image: linear-gradient(
-                    to bottom right,
-                    #9cb9f7,
-                    #3e72e6,
-                    #3f73e8,
-                    #023cbf
-                );
-                border-radius: 20px;
-                border: 2px solid #002389;
-            }
-
-            #tidal {
-                background-image: linear-gradient(
-                    to bottom right,
-                    #9cb9f7,
-                    #3e72e6,
-                    #3f73e8,
-                    #023cbf
-                );
-                border-radius: 20px;
-                border: 2px solid #002389;
-            }
-
-            #photography {
-                background-image: linear-gradient(
-                    to bottom right,
-                    #9cb9f7,
-                    #3e72e6,
-                    #3f73e8,
-                    #023cbf
-                );
-                border-radius: 20px;
-                border: 2px solid #002389;
-            }
-
-            #digitalart {
-                background-image: linear-gradient(
-                    to bottom right,
-                    #9cb9f7,
-                    #3e72e6,
-                    #3f73e8,
-                    #023cbf
-                );
-                border-radius: 20px;
-                border: 2px solid #002389;
-            }
-
-            #otherstuff {
-                background-image: linear-gradient(
-                    to bottom right,
-                    #9cb9f7,
-                    #3e72e6,
-                    #3f73e8,
-                    #023cbf
-                );
-                border-radius: 20px;
-                border: 2px solid #002389;
-            }
-
-            #aboutme {
-                background-color: #1253e5;
-                background-image: linear-gradient(
-                    to bottom right,
-                    #9cb9f7,
-                    #3e72e6,
-                    #3f73e8,
-                    #023cbf
-                );
-                border-radius: 19px;
-                border-top-left-radius: 0px;
-                border: 5px solid #002389;
-                padding-left: 60px;
-                padding-right: 100px;
-                padding-top: 10px;
-                padding-bottom: 20px;
-            }
-
-            #blog {
-                background-color: #1253e5;
-                background-image: linear-gradient(
-                    to bottom right,
-                    #9cb9f7,
-                    #3e72e6,
-                    #3f73e8,
-                    #023cbf
-                );
-                border-radius: 19px;
-                border: 5px solid #002389;
-                text-align: center;
-            }
-            .container {
-                display: flex; /* Makes the container a flex container */
-                /* Optional properties for alignment and spacing */
-                justify-content: space-around; /* Distributes space evenly */
-                align-items: center; /* Vertically centers items */
-            }
-            #projects {
-                background-color: #1253e5;
-                background-image: linear-gradient(
-                    to bottom right,
-                    #9cb9f7,
-                    #3e72e6,
-                    #3f73e8,
-                    #023cbf
-                );
-                border-radius: 19px;
-                border: 5px solid #002389;
-                text-align: left;
-                height: 200px; /* Set the desired height of the box */
-                overflow: auto; /* Enable scrolling when content exceeds the box dimensions */
-                padding-left: 20px;
-                padding-right: 50px;
-                padding-top: 5px;
-                padding-bottom: 20px;
-                /* Add some padding inside the box */
-                margin-left: 30px;
-                margin-right: 30px;
-            }
-
-            #updates {
-                background-color: #1253e5;
-                background-image: linear-gradient(
-                    to bottom right,
-                    #9cb9f7,
-                    #3e72e6,
-                    #3f73e8,
-                    #023cbf
-                );
-                border-radius: 19px;
-                border: 5px solid #002389;
-                height: 200px; /* Set the desired height of the box */
-                /* Add a border for visibility */
-                overflow: auto; /* Enable scrolling when content exceeds the box dimensions */
-                padding-left: 30px;
-                padding-right: 100px;
-                padding-top: 10px;
-                padding-bottom: 20px;
-                /* Add some padding inside the box */
-            }
-
-            #line {
-                color: white;
-            }
-
-            .mid-about-text {
-                position: relative;
-                text-align: center;
-                margin: 30px 0;
-            }
-
-            .mid-about-text::before {
-                content: "";
-                position: absolute;
-                top: 50%;
-                left: 0;
-                right: 0;
-                height: 1px;
-                background-color: #eee;
-                z-index: 1; /* Ensures the line is behind the text */
-            }
-
-            .mid-about-text span {
-                background-color: white; /* Matches page background */
-                padding: 0 10px;
-                border-radius: 19px;
-                position: relative;
-                z-index: 2; /* Ensures text is above the line */
-                font-weight: bold;
-                color: #555;
-            }
-
-            #endabout {
-                color: white;
-            }
-            ul {
-                list-style-type: none;
-                margin: 0;
-                padding: 4px;
-                display: flex;
-                background-image: linear-gradient(
-                    to bottom left,
-                    #9cb9f7,
-                    #3e72e6,
-                    #1b4bb7,
-                    #0033a6
-                );
-                overflow: scroll;
-                border-radius: 19px;
-                border: 5px #002389 solid;
-                border-bottom-left-radius: 0px;
-                justify-content: space-evenly;
-            }
-            ul li a {
-                display: block;
-                color: white;
-                text-decoration: none;
-                padding: 7px 7px;
-            }
-            ul li a:hover {
-                background-color: black;
-                color: #1253e5;
-                width: fit-content;
-                padding-left: 20px;
-                padding-right: 20px;
-                border-radius: 15px;
-                text-align: center;
-                overflow: hidden;
-            }
-            ul li a.active {
-                background-color: #9bb8f7;
-            }
-        </style>
         <header>
-            <img id="headerscroll" src="elphiene-header.gif" height="auto" />
+            <img
+                id="headerscroll"
+                src="elphiene-header.gif"
+                alt="Elphiene header banner"
+                height="auto"
+            />
         </header>
         <ul>
             <li>
@@ -408,6 +146,11 @@
         &nbsp;&nbsp;
         <div id="updates">
             <h2>update log</h2>
+            <h4 padding-left="50px"><em>December 1st 2025 11:30am</em></h4>
+            <pre>
+                Created a CSS styling page and removed CSS from subpages.
+                added start gif background to homepage. new blog update.
+            </pre>
             <h4 padding-left="50px"><em>November 11th 2025 7.20pm</em></h4>
             <pre>
                 Added a nav bar (with much struggle), changed the background,
@@ -430,5 +173,6 @@
             <pre>        Added an update log.</pre>
             &nbsp;&nbsp;
         </div>
+        &nbsp;&nbsp; &nbsp;&nbsp;
     </body>
 </html>
