@@ -8,6 +8,9 @@
    =================================== */
 
 :root {
+    scrollbar-color: #1b4bb7 transparent;
+    scrollbar-face-color: whitesmoke;
+
     /* Color Palette */
     --color-primary-blue: #73afe8;
     --color-primary-dark-blue: #1253e5;
@@ -57,6 +60,7 @@
     --font-size-base: 16px;
     --font-size-medium: 20px;
     --font-size-large: 22px;
+    --text-align-center: center;
 }
 
 body::before {
@@ -88,6 +92,10 @@ body {
     font-family: var(--font-family-main);
     margin: 0;
     min-height: 100vh;
+    /* Scrollbar */
+    scrollbar-color: #1b4bb7 transparent;
+    scrollbar-width: thin;
+    scrollbar-face-color: whitesmoke;
 }
 
 h1 {
@@ -257,6 +265,22 @@ header {
     padding: var(--spacing-small) var(--spacing-xxlarge) var(--spacing-medium)
         30px;
     text-align: left;
+}
+.footer {
+    background-color: var(--color-primary-dark-blue);
+    border: 5px solid var(--color-border-blue) var(--radius-large);
+    padding: 5px var(--spacing-small);
+    margin-bottom: 15px;
+    height: auto;
+}
+#footerscroll {
+    position: fixed;
+    width: 100%;
+    height: auto;
+}
+
+#spacer {
+    height: 200px;
 }
 
 /* ===================================
