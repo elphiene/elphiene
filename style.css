@@ -215,8 +215,8 @@ header {
 
 .badges {
     display: flex; /* Makes the container a flex container */
-    justify-content: space-around; /* Distributes space around items */
-    gap: 5px; /* Adds space between items */
+    justify-content: center; /* Distributes space around items */
+    gap: 1px; /* Adds space between items */
     padding: 0px;
 }
 
