@@ -192,11 +192,13 @@ header {
 #digitalart,
 #otherstuff {
     background-image: var(--gradient-blue);
-    border-radius: var(--radius-medium);
-    border: 2px solid var(--color-border-blue);
-    padding: 5px;
+    border-radius: var(--radius-large);
+    border: 5px solid var(--color-border-blue);
+    padding-left: var(--spacing-xlarge);
+    padding-right: var(--spacing-xxlarge);
+    padding-top: var(--spacing-small);
+    padding-bottom: var(--spacing-medium);
 }
-
 /* ===================================
    CONTENT BOXES / CARDS
    =================================== */
@@ -209,6 +211,43 @@ header {
     padding: var(--spacing-small) var(--spacing-xlarge) var(--spacing-medium)
         var(--spacing-xlarge);
     margin-bottom: var(--spacing-medium);
+}
+
+.badges {
+    display: flex; /* Makes the container a flex container */
+    justify-content: space-around; /* Distributes space around items */
+    gap: 5px; /* Adds space between items */
+    padding: 0px;
+}
+
+.palenstine,
+.bestvw,
+.comicsans,
+.cup,
+.gothtml,
+.insuff,
+.oldweb,
+.html,
+.paws,
+.webp {
+    padding: 5px;
+}
+
+.blinkies {
+    display: flex; /* Makes the container a flex container */
+    justify-content: center; /* Distributes space around items */
+    gap: 1px; /* Adds space between items */
+}
+
+.tabs,
+.bite,
+.cheerios,
+.dolls,
+.trains,
+.connected,
+.debian,
+.cherrysofa {
+    padding: 5px;
 }
 
 #aboutme {
@@ -240,8 +279,9 @@ header {
     padding-bottom: 20px;
     height: 200px;
     overflow: auto;
+    max-width: fit-content;
 }
-
+#blogposts,
 #projects {
     background-image: var(--gradient-blue);
     border-radius: var(--radius-large);
@@ -257,6 +297,18 @@ header {
     margin-right: 30px;
 }
 
+#pet {
+    background-image: var(--gradient-blue);
+    border-radius: var(--radius-large);
+    border: 5px solid var(--color-border-blue);
+    text-align: center;
+    max-height: fit-content;
+    overflow: auto;
+    padding: 0.5%;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
 #bloglinks {
     background-color: var(--color-bg-light-blue);
     border-radius: var(--radius-large);
@@ -267,6 +319,7 @@ header {
         30px;
     text-align: left;
 }
+
 .footer {
     background-color: var(--color-primary-dark-blue);
     border: 5px solid var(--color-border-blue) var(--radius-large);
