@@ -221,6 +221,7 @@ li {
     display: flex; /* Makes the container a flex container */
     flex-direction: row;
     justify-content: center; /* Distributes space around items */
+    align-items: center;
     gap: 5px; /* Adds space between items */
     padding: 2px;
 }
@@ -242,6 +243,7 @@ li {
     display: flex; /* Makes the container a flex container */
     flex-direction: row;
     justify-content: center; /* Distributes space around items */
+    align-items: center;
     gap: 1px; /* Adds space between items */
 }
 
