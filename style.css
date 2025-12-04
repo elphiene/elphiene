@@ -160,6 +160,10 @@ header {
     height: auto;
 }
 
+li {
+    margin-left: 20px;
+}
+
 /* ===================================
    SOCIAL MEDIA ICONS
    =================================== */
