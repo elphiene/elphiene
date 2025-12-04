@@ -218,7 +218,7 @@ li {
 }
 
 .badges {
-    display: flexbox; /* Makes the container a flex container */
+    display: flex; /* Makes the container a flex container */
     justify-content: center; /* Distributes space around items */
     gap: 5px; /* Adds space between items */
     padding: 2px;
@@ -238,7 +238,7 @@ li {
 }
 
 .blinkies {
-    display: -ms-flexbox; /* Makes the container a flex container */
+    display: flex; /* Makes the container a flex container */
     justify-content: center; /* Distributes space around items */
     gap: 1px; /* Adds space between items */
 }
