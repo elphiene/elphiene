@@ -571,4 +571,9 @@ button a {
     p {
         font-size: var(--font-size-small);
     }
+    .container {
+        display: block;
+        justify-content: space-around;
+        align-items: center;
+    }
 }
