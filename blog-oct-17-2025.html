@@ -5,7 +5,10 @@
         <link rel="icon" type="image/x-icon" href="favicon.png" />
         <link rel="stylesheet" href="style.css" />
         <meta charset="UTF-8" />
-        <meta name="description" content="Elphiene's blog - October 17th 2025" />
+        <meta
+            name="description"
+            content="Elphiene's blog - october 17th 2025"
+        />
         <meta
             name="keywords"
             content="HTML, CSS, JavaScript, Elphiene's blog"
@@ -14,19 +17,19 @@
         <meta name="year" content="2025" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script type="text/javascript">
-        (function() {
-            let title = "october 17th 2025 ✩ ";
-            let position = 0;
-            function scrolltitle() {
-                document.title =
-                    title.substring(position, title.length) +
-                    title.substring(0, position);
-                position++;
-                if (position > title.length) position = 0;
-                window.setTimeout(scrolltitle, 170);
-            }
-            scrolltitle();
-        })();
+            (function () {
+                let title = "october 17th 2025 ✩ ";
+                let position = 0;
+                function scrolltitle() {
+                    document.title =
+                        title.substring(position, title.length) +
+                        title.substring(0, position);
+                    position++;
+                    if (position > title.length) position = 0;
+                    window.setTimeout(scrolltitle, 170);
+                }
+                scrolltitle();
+            })();
         </script>
         <style>
             body {
@@ -37,19 +40,25 @@
         </style>
     </head>
     <body>
-        <header>
-            <img id="headerscroll" src="elphiene-header.gif" alt="Elphiene header banner" height="auto" />
-        </header>
+        <div class="blogheader">
+            <div id="blogheader">my first blog post!</div>
+            <div id="blogback">
+                <a href="blog.html"><img src="back.gif" /></a>
+            </div>
+        </div>
+        <div class="blogcontent">
+            <div id="blogtext">
+                <pre>
+                    welcome to my first blog post!
 
-        <h3>my first blog post!</h3>
-        <pre>
-welcome to my first blog post!
+                    i plan to use this space to document what i'm up to and working on, especially as i learn a bit more about development.
 
-i plan to use this space to document what i'm up to and working on, especially as i learn a bit more about development.
+                    today i worked on styling the page, although i still need to add the styling to my other sub pages, and add the contents, but for my photography and art, i have to download so much stuff and i cant be bothered to find it all lowkey!!!!
 
-today i worked on styling the page, although i still need to add the styling to my other sub pages, and add the contents, but for my photography and art, i have to download so much stuff and i cant be bothered to find it all lowkey!!!!
-
-i also got my website up and hosted through github, mostly for version control and update logs etc etc, but that took forever and cherry and to do it for me in the end.</pre
-        >
+                    i also got my website up and hosted through github, mostly for version control and update logs etc etc, but that took forever and cherry and to do it for me in the end.
+                </pre>
+            </div>
+            <div id="blogside"></div>
+        </div>
     </body>
 </html>
