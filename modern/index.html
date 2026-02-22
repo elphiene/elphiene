@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en-AU">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>cherry's labs</title>
+        <meta name="description" content="cherry's labs - modern UI" />
+        <meta
+            name="keywords"
+            content="HTML, CSS, JavaScript, cherry's labs, projects, 3D printing, store"
+        />
+        <meta name="author" content="Elphiene" />
+        <meta name="year" content="2026" />
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="../retro/images/icons/favicon.png"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <img
+                src="../retro/images/logos/cherrys-labs.png"
+                alt="cherry's labs"
+                class="logo"
+            />
+            <nav>
+                <a href="projects.html">projects</a>
+                <a href="programs.html">programs</a>
+                <a href="store.html">store</a>
+                <a href="wiki.html">wiki</a>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Intro Cards Section -->
+            <section class="intros">
+                <div class="card">
+                    <h2>cherry</h2>
+                    <p><em>she/her</em></p>
+                    <p>text</p>
+                    <p class="sub-info">sub-info</p>
+                </div>
+                <div class="card">
+                    <h2>el</h2>
+                    <p><em>they/them</em><br />artist, webmaster.</p>
+                    <p>
+                        debian 13<br />lenovo ideapad slim 3<br />bambu lab a1 +
+                        ams lite
+                    </p>
+                </div>
+            </section>
+
+            <!-- Projects/Store Highlight Section -->
+            <section class="showcase">
+                <h2>Latest Projects & Products</h2>
+                <p>
+                    Check out our <a href="projects.html">projects</a>,
+                    <a href="programs.html">programs</a>, and
+                    <a href="store.html">store</a> for 3D prints and tech!
+                </p>
+            </section>
+
+            <!-- News Section -->
+            <section class="news">
+                <div class="card">
+                    <h3>Latest News</h3>
+                    <article>
+                        <time>jan 13th 2026</time>
+                        <h4>website creation</h4>
+                        <p>created website today - e</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Updates Section -->
+            <section class="updates">
+                <div class="card">
+                    <h3>Updates</h3>
+                    <article>
+                        <time>february 16th 8:53am</time>
+                        <p>
+                            created modern website, adjusted css styling and
+                            formatting. -e
+                        </p>
+                    </article>
+                    <article>
+                        <time>january 14th 6:53pm</time>
+                        <p>
+                            formatted and filled in index page, created
+                            sub-pages. added css styling. -e
+                        </p>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>
+                webmaster:
+                <a href="https://elphiene.github.io/elphiene/elphiene"
+                    >elphiene</a
+                >
+                | 2026 | <a href="https://cherrysofa.com">cherrysofa.com</a>
+            </p>
+        </footer>
+
+        <script>
+            // Simple fade-in animation timing for cards
+            document.addEventListener("DOMContentLoaded", () => {
+                const cards = document.querySelectorAll(".card");
+                cards.forEach((card, index) => {
+                    card.style.animationDelay = `${index * 0.1}s`;
+                });
+            });
+        </script>
+    </body>
+</html>
