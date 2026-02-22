@@ -46,10 +46,6 @@ Open `modern/index.html` in your web browser.
 
 Both retro and modern versions will ideally share the same content (projects, products, posts), though implementation details are TBD based on how different the two designs become.
 
-## Development Notes
-
-See [CLAUDE.md](CLAUDE.md) for detailed development guidance, architecture notes, and coding conventions.
-
 ## Repository Structure
 
 ```
@@ -64,7 +60,6 @@ See [CLAUDE.md](CLAUDE.md) for detailed development guidance, architecture notes
 │   └── images/
 ├── modern/             # Modern UI version (future)
 │   └── README.md
-├── CLAUDE.md           # Development guidance
 └── README.md           # This file
 ```
 
