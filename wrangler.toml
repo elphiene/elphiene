@@ -1,0 +1,8 @@
+name = "elphiene-guestbook"
+main = "worker/index.js"
+compatibility_date = "2025-01-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "elphiene-guestbook"
+database_id = "6472da90-6668-4024-9d40-43c0d951b512"

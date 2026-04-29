@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en-AU">
+    <head>
+        <title>guestbook ✩</title>
+        <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+        <link rel="stylesheet" href="style.css" />
+        <meta charset="UTF-8" />
+        <meta name="description" content="Elphiene's guestbook" />
+        <meta name="author" content="Elphiene" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script type="text/javascript">
+            (function () {
+                let title = "guestbook ✩ ";
+                let position = 0;
+                function scrolltitle() {
+                    document.title =
+                        title.substring(position, title.length) +
+                        title.substring(0, position);
+                    position++;
+                    if (position > title.length) position = 0;
+                    window.setTimeout(scrolltitle, 170);
+                }
+                scrolltitle();
+            })();
+        </script>
+        <style>
+            #guestbook-form {
+                background-image: var(--gradient-blue);
+                border-radius: var(--radius-large);
+                border: 5px solid var(--color-border-blue);
+                padding: 20px 30px;
+                margin-bottom: 15px;
+            }
+
+            #guestbook-form h2 {
+                margin-top: 0;
+            }
+
+            .form-row {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                margin-bottom: 12px;
+            }
+
+            .form-row label {
+                font-size: var(--font-size-small);
+                font-weight: bold;
+            }
+
+            .form-row input,
+            .form-row textarea {
+                background-color: rgba(255, 255, 255, 0.1);
+                border: 2px solid var(--color-border-blue);
+                border-radius: 8px;
+                color: var(--color-text-white);
+                font-family: var(--font-family-main);
+                font-size: var(--font-size-small);
+                padding: 8px 12px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .form-row textarea {
+                height: 100px;
+                resize: vertical;
+            }
+
+            .form-row input::placeholder,
+            .form-row textarea::placeholder {
+                color: rgba(255, 255, 255, 0.5);
+            }
+
+            #form-status {
+                font-size: var(--font-size-small);
+                margin-top: 8px;
+                min-height: 1.2em;
+            }
+
+            #entries-list {
+                background-image: var(--gradient-blue);
+                border-radius: var(--radius-large);
+                border: 5px solid var(--color-border-blue);
+                padding: 20px 30px;
+            }
+
+            #entries-list h2 {
+                margin-top: 0;
+            }
+
+            .entry {
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+                padding: 12px 0;
+            }
+
+            .entry:first-of-type {
+                border-top: none;
+            }
+
+            .entry-name {
+                font-weight: bold;
+                font-size: var(--font-size-small);
+            }
+
+            .entry-date {
+                font-size: 11px;
+                opacity: 0.6;
+                margin-left: 8px;
+            }
+
+            .entry-message {
+                margin: 6px 0 0;
+                font-size: var(--font-size-small);
+                line-height: 1.5;
+            }
+
+            #entries-loading {
+                opacity: 0.6;
+                font-size: var(--font-size-small);
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <img
+                id="headerscroll"
+                src="images/elphiene-header.gif"
+                alt="Elphiene header banner"
+            />
+        </header>
+        <ul>
+            <li>
+                <a href="index.html"><b>home</b></a>
+            </li>
+            <li>
+                <a href="blog.html"><b>blog</b></a>
+            </li>
+            <li>
+                <a href="other-stuff.html"><b>other stuff</b></a>
+            </li>
+            <li>
+                <a href="guestbook.html"><b>guestbook</b></a>
+            </li>
+        </ul>
+
+        <div id="guestbook-form">
+            <h2>sign my guestbook :p</h2>
+            <div class="form-row">
+                <label for="gb-name">name</label>
+                <input
+                    id="gb-name"
+                    type="text"
+                    maxlength="50"
+                    placeholder="your name"
+                    autocomplete="off"
+                />
+            </div>
+            <div class="form-row">
+                <label for="gb-message">message</label>
+                <textarea
+                    id="gb-message"
+                    maxlength="500"
+                    placeholder="what do you wanna say?"
+                ></textarea>
+            </div>
+            <button id="gb-submit">sign!</button>
+            <p id="form-status"></p>
+        </div>
+
+        <div id="entries-list">
+            <h2>entries</h2>
+            <p id="entries-loading">loading entries...</p>
+        </div>
+
+        <div id="footer">
+            <img src="images/favicon.png" height="20px" alt="favicon" />
+            elphiene |
+            <a href="mailto:el@elphiene.com">el@elphiene.com</a>
+            | 2025 |
+            <img src="images/favicon.png" height="20px" alt="favicon" />
+        </div>
+
+        <script>
+            const WORKER_URL =
+                "https://elphiene-guestbook.headsinthecloudsmct.workers.dev";
+
+            const nameInput = document.getElementById("gb-name");
+            const messageInput = document.getElementById("gb-message");
+            const submitBtn = document.getElementById("gb-submit");
+            const statusEl = document.getElementById("form-status");
+            const entriesList = document.getElementById("entries-list");
+            const loadingEl = document.getElementById("entries-loading");
+
+            function formatDate(iso) {
+                const d = new Date(iso);
+                return d.toLocaleDateString("en-AU", {
+                    day: "numeric",
+                    month: "short",
+                    year: "numeric",
+                });
+            }
+
+            async function loadEntries() {
+                try {
+                    const res = await fetch(WORKER_URL + "/entries");
+                    const entries = await res.json();
+                    loadingEl.remove();
+                    if (entries.length === 0) {
+                        entriesList.insertAdjacentHTML(
+                            "beforeend",
+                            "<p style='opacity:0.6;font-size:14px'>no entries yet — be the first!</p>",
+                        );
+                        return;
+                    }
+                    for (const e of entries) {
+                        const div = document.createElement("div");
+                        div.className = "entry";
+                        const name = document.createElement("span");
+                        name.className = "entry-name";
+                        name.textContent = e.name;
+                        const date = document.createElement("span");
+                        date.className = "entry-date";
+                        date.textContent = formatDate(e.created_at);
+                        const msg = document.createElement("p");
+                        msg.className = "entry-message";
+                        msg.textContent = e.message;
+                        div.appendChild(name);
+                        div.appendChild(date);
+                        div.appendChild(msg);
+                        entriesList.appendChild(div);
+                    }
+                } catch {
+                    loadingEl.textContent = "couldn't load entries :(";
+                }
+            }
+
+            submitBtn.addEventListener("click", async () => {
+                const name = nameInput.value.trim();
+                const message = messageInput.value.trim();
+                if (!name || !message) {
+                    statusEl.textContent = "please fill in both fields!";
+                    return;
+                }
+                submitBtn.disabled = true;
+                statusEl.textContent = "signing...";
+                try {
+                    const res = await fetch(WORKER_URL + "/sign", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ name, message }),
+                    });
+                    if (res.ok) {
+                        statusEl.textContent = "thanks for signing! :)";
+                        nameInput.value = "";
+                        messageInput.value = "";
+                        setTimeout(() => location.reload(), 1200);
+                    } else {
+                        statusEl.textContent =
+                            "something went wrong, try again";
+                        submitBtn.disabled = false;
+                    }
+                } catch {
+                    statusEl.textContent = "couldn't reach the server :(";
+                    submitBtn.disabled = false;
+                }
+            });
+
+            loadEntries();
+        </script>
+    </body>
+</html>
