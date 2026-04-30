@@ -13,9 +13,21 @@
     --color-border-blue: #002389;
     --color-border-alt: #1b4bb7;
 
-    --gradient-blue: linear-gradient(to bottom right, #9cb9f7, #3e72e6, #3f73e8, #023cbf);
+    --gradient-blue: linear-gradient(
+        to bottom right,
+        #9cb9f7,
+        #3e72e6,
+        #3f73e8,
+        #023cbf
+    );
     --gradient-dark-bg: linear-gradient(to bottom right, #082361, #000000);
-    --gradient-nav: linear-gradient(to bottom left, #9cb9f7, #3e72e6, #1b4bb7, #0033a6);
+    --gradient-nav: linear-gradient(
+        to bottom left,
+        #9cb9f7,
+        #3e72e6,
+        #1b4bb7,
+        #0033a6
+    );
 
     --color-bg-dark: #1c1e1f;
     --color-bg-light-blue: #8bacf3;
@@ -204,7 +216,8 @@ ul li a.active {
     display: flex;
     gap: 0;
     width: max-content;
-    will-change: transform;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
     animation: scroll 20s linear infinite;
 }
 
@@ -215,8 +228,12 @@ ul li a.active {
 }
 
 @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(-50%, 0, 0);
+    }
 }
 
 /* ===================================
@@ -236,7 +253,8 @@ ul li a.active {
     border-radius: var(--radius-large);
     border-top-left-radius: 0;
     border: 5px solid var(--color-border-blue);
-    padding: var(--spacing-small) var(--spacing-xxlarge) var(--spacing-medium) var(--spacing-xlarge);
+    padding: var(--spacing-small) var(--spacing-xxlarge) var(--spacing-medium)
+        var(--spacing-xlarge);
     margin-bottom: 15px;
 }
 
@@ -458,12 +476,24 @@ button a {
    UTILITY CLASSES
    =================================== */
 
-.text-center { text-align: center; }
-.text-left { text-align: left; }
-.text-right { text-align: right; }
-.mb-small { margin-bottom: var(--spacing-small); }
-.mb-medium { margin-bottom: var(--spacing-medium); }
-.mb-large { margin-bottom: var(--spacing-large); }
+.text-center {
+    text-align: center;
+}
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+.mb-small {
+    margin-bottom: var(--spacing-small);
+}
+.mb-medium {
+    margin-bottom: var(--spacing-medium);
+}
+.mb-large {
+    margin-bottom: var(--spacing-large);
+}
 
 /* ===================================
    RESPONSIVE — TABLET (≤768px)
