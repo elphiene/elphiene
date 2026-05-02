@@ -43,11 +43,11 @@
     --spacing-xlarge: 60px;
     --spacing-xxlarge: 100px;
 
-    --font-family-main: Tahoma, sans-serif;
-    --font-size-small: 14px;
-    --font-size-base: 16px;
-    --font-size-medium: 20px;
-    --font-size-large: 22px;
+    --font-family-main: WDXL Lubrifont SC;
+    --font-size-small: 18px;
+    --font-size-base: 20px;
+    --font-size-medium: 22px;
+    --font-size-large: 24px;
 }
 
 body::before {
@@ -69,6 +69,12 @@ body::before {
 /* ===================================
    BASE STYLES
    =================================== */
+
+.wdxl-lubrifont-sc-regular {
+    font-family: "WDXL Lubrifont SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
 
 body {
     padding: 10px var(--spacing-large) 0;
@@ -99,6 +105,7 @@ h3 {
 
 h4 {
     color: var(--color-text-white);
+    font-size: var(--font-size-base);
 }
 
 p {
