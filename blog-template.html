@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en-AU">
+    <head>
+        <title>POST TITLE ✩</title>
+        <link rel="icon" type="image/x-icon" href="images/favicon.png" />
+        <link rel="stylesheet" href="style.css" />
+        <meta charset="UTF-8" />
+        <meta name="description" content="Elphiene's blog - POST TITLE" />
+        <meta name="keywords" content="HTML, CSS, Elphiene's blog" />
+        <meta name="author" content="Elphiene" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script type="text/javascript">
+            (function () {
+                let title = "POST TITLE ✩ ";
+                let position = 0;
+                function scrolltitle() {
+                    document.title =
+                        title.substring(position, title.length) +
+                        title.substring(0, position);
+                    position++;
+                    if (position > title.length) position = 0;
+                    window.setTimeout(scrolltitle, 170);
+                }
+                scrolltitle();
+            })();
+        </script>
+    </head>
+    <body>
+        <header>
+            <img
+                id="headerscroll"
+                src="images/elphiene-header.gif"
+                alt="Elphiene header banner"
+            />
+        </header>
+        <ul>
+            <li><a href="index.html"><b>home</b></a></li>
+            <li><a href="blog.html"><b>blog</b></a></li>
+            <li><a href="other-stuff.html"><b>other stuff</b></a></li>
+        </ul>
+
+        <div class="blog-post-title-bar">
+            <h2>POST TITLE</h2>
+            <a href="blog.html"><img src="images/back.gif" alt="back to blog" /></a>
+        </div>
+
+        <div class="blog-post-layout">
+            <div class="blog-post-text">
+                <p>Write your blog post content here.</p>
+                <p>Each paragraph gets its own p tag.</p>
+            </div>
+            <div class="blog-post-aside">
+                <!-- Optional: date, images, gifs, notes -->
+                <!-- Remove this div entirely if you don't need a sidebar -->
+                <p>DATE HERE</p>
+            </div>
+        </div>
+
+        <div id="footer">
+            <img src="images/favicon.png" height="20px" alt="favicon" />
+            elphiene |
+            <a href="mailto:el@elphiene.com">el@elphiene.com</a>
+            | 2025 |
+            <img src="images/favicon.png" height="20px" alt="favicon" />
+        </div>
+    </body>
+</html>
