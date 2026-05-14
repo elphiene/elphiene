@@ -339,6 +339,9 @@ ul li a.active {
 }
 
 #jpickle img {
+    max-width: 100%;
+    height: auto;
+    display: block;
     border-radius: var(--radius-large);
     border: var(--border-width-medium) solid #003399;
 }
@@ -598,6 +601,32 @@ button a {
         height: 220px;
     }
 
+    #photos img {
+        max-height: 190px;
+        width: auto;
+    }
+
+    #pet iframe {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #badges {
+        flex-wrap: wrap;
+        gap: 6px;
+        margin: 10px 0;
+    }
+
+    .marquee-track img {
+        max-height: 50px;
+    }
+
+    #photography,
+    #digitalart,
+    #otherstuff {
+        padding: 20px;
+    }
+
     .blog-post-layout {
         flex-direction: column;
     }
@@ -669,8 +698,28 @@ button a {
         height: 160px;
     }
 
+    #photos img {
+        max-height: 130px;
+    }
+
     #pet iframe {
         max-width: 100%;
+        height: auto;
+    }
+
+    #badges img {
+        max-width: 80px;
+        height: auto;
+    }
+
+    .marquee-track img {
+        max-height: 36px;
+    }
+
+    #photography,
+    #digitalart,
+    #otherstuff {
+        padding: 15px;
     }
 
     .blog-post-title-bar {
