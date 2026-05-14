@@ -578,7 +578,8 @@ button a {
         padding-right: var(--spacing-medium);
     }
 
-    .container {
+    .container,
+    .container2 {
         flex-direction: column;
         align-items: stretch;
     }
@@ -586,9 +587,15 @@ button a {
     #projects,
     #jpickle,
     #updates,
-    #pet {
+    #pet,
+    #photos {
         width: 100%;
         box-sizing: border-box;
+        height: auto;
+    }
+
+    #photos {
+        height: 220px;
     }
 
     .blog-post-layout {
@@ -617,6 +624,10 @@ button a {
         font-size: var(--font-size-medium);
     }
 
+    h2 {
+        font-size: var(--font-size-base);
+    }
+
     p {
         font-size: var(--font-size-small);
     }
@@ -634,6 +645,10 @@ button a {
         padding: 5px 8px;
     }
 
+    .card {
+        padding: var(--spacing-small) var(--spacing-medium);
+    }
+
     #projects {
         height: auto;
         max-height: 280px;
@@ -648,6 +663,10 @@ button a {
 
     #updates {
         padding: 10px 15px;
+    }
+
+    #photos {
+        height: 160px;
     }
 
     #pet iframe {
