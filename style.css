@@ -710,8 +710,17 @@ button a {
         padding: 10px 15px;
     }
 
+    #pet {
+        height: 230px;
+    }
+
+    #pet iframe {
+        transform: scale(0.72);
+        transform-origin: top left;
+    }
+
     #jpickle {
-        height: 240px;
+        height: 230px;
     }
 
     #updates {
