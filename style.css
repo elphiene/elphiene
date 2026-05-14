@@ -601,6 +601,7 @@ button a {
     #pet {
         flex: 2 1 55%;
         min-width: 0;
+        height: 280px;
         overflow: hidden;
         box-sizing: border-box;
     }
@@ -613,15 +614,15 @@ button a {
     #jpickle {
         flex: 1 1 30%;
         min-width: 0;
-        height: 200px;
-        overflow: hidden;
+        height: 280px;
+        overflow-y: auto;
+        overflow-x: hidden;
         box-sizing: border-box;
     }
 
     #jpickle img {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        height: auto;
     }
 
     #photos {
@@ -710,9 +711,7 @@ button a {
     }
 
     #jpickle {
-        height: auto;
-        padding: 10px;
-        font-size: 14px;
+        height: 240px;
     }
 
     #updates {
