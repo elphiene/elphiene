@@ -702,7 +702,13 @@ button a {
 
     .blog-preview {
         height: 200px;
-        width: 100%;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    #a,
+    #b {
+        padding: 10px;
     }
 
     /* container2: pet + jpickle side by side, photos full width below */
@@ -829,7 +835,24 @@ button a {
 
     #pet iframe {
         transform: scale(0.72);
-        transform-origin: top left;
+        transform-origin: top center;
+    }
+
+    .blog-preview iframe {
+        --scale: 0.5;
+        --offset-x: 0px;
+        --crop-sides: 55px;
+        margin-top: -100px;
+    }
+
+    #badges {
+        gap: 4px;
+        margin: 6px 0;
+    }
+
+    #badges img {
+        max-width: 72px;
+        height: auto;
     }
 
     #jpickle {
