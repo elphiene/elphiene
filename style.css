@@ -149,9 +149,9 @@ a:hover {
    =================================== */
 
 header {
-    background-color: var(--color-primary-dark-blue);
-    border-radius: var(--radius-large);
-    padding: 5px var(--spacing-small);
+    background-color: #0f4bd7;
+    border-radius: 5px;
+    padding: 2px var(--spacing-small);
     margin-bottom: 10px;
 }
 
@@ -283,7 +283,99 @@ ul li a.active {
     padding-right: 15px;
     margin-bottom: 15px;
     width: 33%;
+    height: 420px;
     align-content: centre;
+}
+
+#side {
+    display: flex;
+    flex-direction: column;
+    background: var(--gradient-blue);
+    border-radius: var(--radius-large);
+    border-top-right-radius: 0;
+    border: var(--border-width-thick) solid var(--color-border-blue);
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 15px;
+    width: 66%;
+    height: 420px;
+}
+
+.latest {
+    display: flex;
+    flex: 1;
+    gap: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    overflow: hidden;
+    margin: 0;
+}
+
+#a,
+#b {
+    flex: 1;
+    background-color: #082361;
+    border-radius: var(--radius-small);
+    padding-top: 10px;
+}
+
+#a {
+    text-align: center;
+    align-items: center;
+}
+
+#a h3,
+#b h3 {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+}
+
+#a p {
+}
+
+#b p {
+    font-size: 16px;
+    padding-left: 20px;
+}
+
+.blog-preview {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 90%;
+    margin: 0 auto;
+    border: var(--border-width-medium) solid var(--color-medium-blue);
+}
+
+.preview-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.blog-preview:hover {
+    border: solid var(--border-width-thick) var(--color-light-blue);
+}
+
+.blog-preview iframe {
+    --scale: 1.05;
+    --offset-x: 0px;
+    --crop-sides: 20px;
+    margin-top: -220px;
+    margin-left: calc(
+        (100% - (100% / var(--scale)) - var(--crop-sides) * 2) / 2 +
+            var(--offset-x)
+    );
+    width: calc(100% / var(--scale) + var(--crop-sides) * 2);
+    height: 600px;
+    border: none;
+    pointer-events: none;
+    transform: scale(var(--scale));
+    transform-origin: top center;
 }
 
 #badges {
@@ -509,6 +601,8 @@ ul li a.active {
     padding: 20px;
     text-align: center;
     min-width: 0;
+    overflow-y: scroll;
+    height: 1100px;
 }
 
 .blog-post-aside img {
