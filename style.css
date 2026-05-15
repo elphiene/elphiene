@@ -670,7 +670,11 @@ button a {
         padding-right: var(--spacing-medium);
     }
 
-    #aboutme {
+    #aboutme,
+    #side {
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
         padding-left: var(--spacing-medium);
         padding-right: var(--spacing-medium);
     }
@@ -684,6 +688,21 @@ button a {
     #updates {
         width: 100%;
         box-sizing: border-box;
+    }
+
+    .latest {
+        flex-direction: column;
+    }
+
+    #a,
+    #b {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .blog-preview {
+        height: 200px;
+        width: 100%;
     }
 
     /* container2: pet + jpickle side by side, photos full width below */
@@ -819,6 +838,15 @@ button a {
 
     #updates {
         padding: 10px 15px;
+    }
+
+    #side {
+        padding-left: var(--spacing-small);
+        padding-right: var(--spacing-small);
+    }
+
+    .blog-preview {
+        height: 160px;
     }
 
     #photos {
