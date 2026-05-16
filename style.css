@@ -842,7 +842,7 @@ button a {
         --scale: 0.5;
         --offset-x: 0px;
         --crop-sides: 55px;
-        margin-top: -100px;
+        margin-top: -200px;
     }
 
     #badges {
@@ -851,7 +851,7 @@ button a {
     }
 
     #badges img {
-        max-width: 72px;
+        max-width: 60px;
         height: auto;
     }
 
