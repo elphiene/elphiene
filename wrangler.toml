@@ -2,6 +2,9 @@ name = "elphiene-guestbook"
 main = "worker/index.js"
 compatibility_date = "2025-01-01"
 
+[triggers]
+crons = ["*/5 * * * *"]
+
 [[d1_databases]]
 binding = "DB"
 database_name = "elphiene-guestbook"
