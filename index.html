@@ -100,7 +100,10 @@
                     <div id="a">
                         <h3>read my blog!</h3>
                         <div class="blog-preview">
-                            <a href="blog-apr-28-2026.html" class="preview-link"></a>
+                            <a
+                                href="blog-apr-28-2026.html"
+                                class="preview-link"
+                            ></a>
                             <iframe
                                 src="blog-apr-28-2026.html"
                                 scrolling="no"
@@ -110,8 +113,42 @@
                     </div>
                     <div id="b">
                         <h3>status</h3>
-                        <p>text goes here</p>
-                        <p>other text here</p>
+                        <div id="status-widget">
+                            <div class="status-row hidden" id="status-music-row">
+                                <span class="status-icon">♪</span>
+                                <div class="status-content">
+                                    <span class="status-label">listening</span>
+                                    <span id="status-music"></span>
+                                </div>
+                            </div>
+
+                            <div class="status-row hidden" id="status-watching-row">
+                                <span class="status-icon">◉</span>
+                                <div class="status-content">
+                                    <span class="status-label">watching</span>
+                                    <span id="status-watching"></span>
+                                </div>
+                            </div>
+
+                            <div class="status-row hidden" id="status-playing-row">
+                                <span class="status-icon">▶</span>
+                                <div class="status-content">
+                                    <span class="status-label">playing</span>
+                                    <span id="status-playing"></span>
+                                </div>
+                            </div>
+
+                            <div class="status-row hidden" id="status-text-row">
+                                <span class="status-icon">✦</span>
+                                <div class="status-content">
+                                    <span id="status-text"></span>
+                                </div>
+                            </div>
+
+                            <p class="status-offline hidden" id="status-offline">
+                                nothing right now
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -356,5 +393,43 @@ because that is a little above my paygrade (im stupid).</pre
             | 2025
             <img src="images/favicon.png" height="20px" alt="favicon" />
         </div>
+        <script>
+            (async function () {
+                const WORKER = "https://elphiene-guestbook.headsinthecloudsmct.workers.dev";
+
+                function show(rowId, spanId, text) {
+                    document.getElementById(spanId).textContent = text;
+                    document.getElementById(rowId).classList.remove("hidden");
+                }
+
+                try {
+                    const res = await fetch(WORKER + "/status");
+                    const s = await res.json();
+                    let any = false;
+
+                    if (s.music) {
+                        show("status-music-row", "status-music", s.music.artist + " — " + s.music.track);
+                        any = true;
+                    }
+                    if (s.watching) {
+                        show("status-watching-row", "status-watching", s.watching.title);
+                        any = true;
+                    }
+                    if (s.playing) {
+                        show("status-playing-row", "status-playing", s.playing.title);
+                        any = true;
+                    }
+                    if (s.text) {
+                        show("status-text-row", "status-text", s.text.content);
+                        any = true;
+                    }
+                    if (!any) {
+                        document.getElementById("status-offline").classList.remove("hidden");
+                    }
+                } catch {
+                    document.getElementById("status-offline").classList.remove("hidden");
+                }
+            })();
+        </script>
     </body>
 </html>
