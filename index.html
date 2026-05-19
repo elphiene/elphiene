@@ -76,6 +76,11 @@
                     /></em>
                 </h4>
                 <p>artist + perpetual student + webmaster + general nerd</p>
+                <div id="badges">
+                    <img src="images/badges/nonbinary.png" />
+                    <img src="images/badges/sagittarius.png" />
+                    <img src="images/badges/australian.png" />
+                </div>
                 <div class="mid-about-text">
                     <span> <img src="images/onlinestarblue.gif" /> </span>
                 </div>
@@ -87,12 +92,6 @@
                     the things i enjoy!! please have a look around, im sure
                     theres something to pique your interest :3
                 </p>
-                <div id="badges">
-                    <img src="images/badges/nonbinary.png" />
-                    <img src="images/badges/sagittarius.png" />
-                    <img src="images/badges/apprentice.png" />
-                    <img src="images/badges/australian.png" />
-                </div>
             </div>
             <div id="side">
                 <h2>the latest</h2>
@@ -114,24 +113,30 @@
                     <div id="b">
                         <h3>status</h3>
                         <div id="status-widget">
-                            <div class="status-row hidden" id="status-music-row">
-                                <span class="status-icon">♪</span>
+                            <div
+                                class="status-row hidden"
+                                id="status-music-row"
+                            >
                                 <div class="status-content">
                                     <span class="status-label">listening</span>
                                     <span id="status-music"></span>
                                 </div>
                             </div>
 
-                            <div class="status-row hidden" id="status-watching-row">
-                                <span class="status-icon">◉</span>
+                            <div
+                                class="status-row hidden"
+                                id="status-watching-row"
+                            >
                                 <div class="status-content">
                                     <span class="status-label">watching</span>
                                     <span id="status-watching"></span>
                                 </div>
                             </div>
 
-                            <div class="status-row hidden" id="status-playing-row">
-                                <span class="status-icon">▶</span>
+                            <div
+                                class="status-row hidden"
+                                id="status-playing-row"
+                            >
                                 <div class="status-content">
                                     <span class="status-label">playing</span>
                                     <span id="status-playing"></span>
@@ -139,14 +144,17 @@
                             </div>
 
                             <div class="status-row hidden" id="status-text-row">
-                                <span class="status-icon">✦</span>
                                 <div class="status-content">
+                                    <span class="status-label">latest:</span>
                                     <span id="status-text"></span>
                                 </div>
                             </div>
 
-                            <p class="status-offline hidden" id="status-offline">
-                                nothing right now
+                            <p
+                                class="status-offline hidden"
+                                id="status-offline"
+                            >
+                                nothing happening right now
                             </p>
                         </div>
                     </div>
@@ -203,11 +211,14 @@
                 <img src="images/photos/PICT0320.jpg" />
                 <img src="images/photos/PICT0055.jpg" />
                 <img src="images/photos/PICT0304.jpg" />
-
                 <img src="images/photos/PICT0082.jpg" />
                 <img src="images/photos/PICT0414.jpg" />
                 <img src="images/photos/PICT0349.jpg" />
                 <img src="images/photos/PICT0468.jpg" />
+                <img src="images/photos/328911410004.jpg" />
+                <img src="images/photos/328911410015.jpg" />
+                <img src="images/photos/328911410019.jpg" />
+                <img src="images/photos/328911410021.jpg" />
             </div>
         </div>
 
@@ -395,7 +406,8 @@ because that is a little above my paygrade (im stupid).</pre
         </div>
         <script>
             (async function () {
-                const WORKER = "https://elphiene-guestbook.headsinthecloudsmct.workers.dev";
+                const WORKER =
+                    "https://elphiene-guestbook.headsinthecloudsmct.workers.dev";
 
                 function show(rowId, spanId, text) {
                     document.getElementById(spanId).textContent = text;
@@ -408,15 +420,27 @@ because that is a little above my paygrade (im stupid).</pre
                     let any = false;
 
                     if (s.music) {
-                        show("status-music-row", "status-music", s.music.artist + " — " + s.music.track);
+                        show(
+                            "status-music-row",
+                            "status-music",
+                            s.music.artist + " — " + s.music.track,
+                        );
                         any = true;
                     }
                     if (s.watching) {
-                        show("status-watching-row", "status-watching", s.watching.title);
+                        show(
+                            "status-watching-row",
+                            "status-watching",
+                            s.watching.title,
+                        );
                         any = true;
                     }
                     if (s.playing) {
-                        show("status-playing-row", "status-playing", s.playing.title);
+                        show(
+                            "status-playing-row",
+                            "status-playing",
+                            s.playing.title,
+                        );
                         any = true;
                     }
                     if (s.text) {
@@ -424,10 +448,14 @@ because that is a little above my paygrade (im stupid).</pre
                         any = true;
                     }
                     if (!any) {
-                        document.getElementById("status-offline").classList.remove("hidden");
+                        document
+                            .getElementById("status-offline")
+                            .classList.remove("hidden");
                     }
                 } catch {
-                    document.getElementById("status-offline").classList.remove("hidden");
+                    document
+                        .getElementById("status-offline")
+                        .classList.remove("hidden");
                 }
             })();
         </script>
