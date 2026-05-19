@@ -34,19 +34,32 @@ async function setStatus(env, key, value) {
 
 async function pollTrakt(env) {
     if (!env.TRAKT_CLIENT_ID || !env.TRAKT_USERNAME) return;
+    const traktHeaders = {
+        "trakt-api-key": env.TRAKT_CLIENT_ID,
+        "trakt-api-version": "2",
+        "Content-Type": "application/json",
+    };
     try {
         const res = await fetch(
             `https://api.trakt.tv/users/${env.TRAKT_USERNAME}/watching`,
-            {
-                headers: {
-                    "trakt-api-key": env.TRAKT_CLIENT_ID,
-                    "trakt-api-version": "2",
-                    "Content-Type": "application/json",
-                },
-            }
+            { headers: traktHeaders }
         );
         if (res.status === 204) {
-            await setStatus(env, "watching", null);
+            // Not currently watching — fall back to last history entry
+            const histRes = await fetch(
+                `https://api.trakt.tv/users/${env.TRAKT_USERNAME}/history?limit=1`,
+                { headers: traktHeaders }
+            );
+            if (histRes.ok) {
+                const hist = await histRes.json();
+                const last = hist?.[0];
+                if (last?.type === "movie") {
+                    await setStatus(env, "watching", { title: last.movie.title, type: "movie" });
+                } else if (last?.type === "episode") {
+                    const ep = `S${String(last.episode.season).padStart(2, "0")}E${String(last.episode.number).padStart(2, "0")}`;
+                    await setStatus(env, "watching", { title: `${last.show.title} ${ep}`, type: "show" });
+                }
+            }
             return;
         }
         const data = await res.json();
@@ -80,7 +93,15 @@ async function pollSteam(env) {
         if (player?.gameextrainfo) {
             await setStatus(env, "playing", { title: player.gameextrainfo });
         } else {
-            await setStatus(env, "playing", null);
+            // Not currently playing — fall back to most recently played game
+            const recentRes = await fetch(
+                `https://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v1/?key=${env.STEAM_API_KEY}&steamid=${env.STEAM_ID}&count=1`
+            );
+            const recentData = await recentRes.json();
+            const lastGame = recentData?.response?.games?.[0];
+            if (lastGame) {
+                await setStatus(env, "playing", { title: lastGame.name });
+            }
         }
     } catch (e) {
         console.error("Steam poll error:", e);
@@ -143,6 +164,23 @@ export default {
             try { body = await request.json(); }
             catch { return new Response("Bad request", { status: 400, headers: CORS }); }
 
+            // Flat format from iPhone Shortcut: {key, artist, track} or {key, content}
+            if (body.key) {
+                const k = body.key;
+                if (k === "music") {
+                    const val = (body.artist || body.track)
+                        ? { artist: body.artist || "", track: body.track || "" }
+                        : null;
+                    await setStatus(env, "music", val);
+                } else if (k === "text") {
+                    await setStatus(env, "text", body.content ? { content: body.content } : null);
+                } else if (k === "clear") {
+                    await setStatus(env, body.target, null);
+                }
+                return new Response("OK", { headers: CORS });
+            }
+
+            // Nested format from curl: {music: {artist, track}} etc.
             for (const key of ["music", "watching", "playing", "text"]) {
                 if (key in body) await setStatus(env, key, body[key]);
             }
