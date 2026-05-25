@@ -33,8 +33,6 @@
     --color-bg-dark: #1c1e1f;
     --color-bg-light-blue: #000066;
     --color-text-white: white;
-    --color-text-light: #ffb7d0;
-    --color-accent-pink: #ff006c;
 
     --radius-small: 5px;
     --radius-large: 10px;
@@ -48,6 +46,9 @@
     --spacing-large: 50px;
     --spacing-xlarge: 60px;
     --spacing-xxlarge: 100px;
+
+    --border: 0px solid var(--color-border-blue);
+    --border-radius: 0px;
 
     --font-family-main: WDXL Lubrifont SC;
     --font-size-small: 14px;
@@ -130,8 +131,8 @@ pre {
 }
 
 hr {
-    border: none;
-    border-top: var(--border-width-thin) solid rgba(255, 255, 255, 0.2);
+    border: var(--border);
+    border-top: var(--border);
     margin: 15px 0;
 }
 
@@ -182,8 +183,8 @@ ul {
     flex-wrap: wrap;
     gap: 4px;
     background-image: var(--gradient-nav);
-    border-radius: var(--radius-large);
-    border: var(--border-width-medium) solid var(--color-border-blue);
+    border-radius: var(--border-radius);
+    border: var(--border);
     border-bottom-left-radius: 0;
     justify-content: space-evenly;
     align-items: center;
@@ -268,17 +269,17 @@ ul li a.active {
 
 .card {
     background-image: var(--gradient-blue);
-    border-radius: var(--radius-large);
-    border: var(--border-width-medium) solid var(--color-border-blue);
+    border-radius: var(--border-radius);
+    border: var(--border);
     padding: var(--spacing-small) var(--spacing-xlarge) var(--spacing-medium);
     margin-bottom: var(--spacing-medium);
 }
 
 #aboutme {
     background: var(--gradient-blue);
-    border-radius: var(--radius-large);
+    border-radius: var(--border-radius);
     border-top-left-radius: 0;
-    border: var(--border-width-thick) solid var(--color-border-blue);
+    border: var(--border);
     padding-left: 15px;
     padding-right: 15px;
     margin-bottom: 15px;
@@ -291,9 +292,9 @@ ul li a.active {
     display: flex;
     flex-direction: column;
     background: var(--gradient-blue);
-    border-radius: var(--radius-large);
+    border-radius: var(--border-radius);
     border-top-right-radius: 0;
-    border: var(--border-width-thick) solid var(--color-border-blue);
+    border: var(--border);
     padding-left: 15px;
     padding-right: 15px;
     margin-bottom: 15px;
@@ -347,7 +348,7 @@ ul li a.active {
     border-radius: 10px;
     width: 90%;
     margin: 0 auto;
-    border: var(--border-width-medium) solid var(--color-medium-blue);
+    border: var(--border);
 }
 
 .preview-link {
@@ -360,7 +361,7 @@ ul li a.active {
 }
 
 .blog-preview:hover {
-    border: solid var(--border-width-thick) var(--color-light-blue);
+    border: var(--border);
 }
 
 .blog-preview iframe {
@@ -374,7 +375,7 @@ ul li a.active {
     );
     width: calc(100% / var(--scale) + var(--crop-sides) * 2);
     height: 600px;
-    border: none;
+    border: var(--border);
     pointer-events: none;
     transform: scale(var(--scale));
     transform-origin: top center;
@@ -388,16 +389,16 @@ ul li a.active {
 
 #blog {
     background-image: var(--gradient-blue);
-    border-radius: var(--radius-large);
-    border: var(--border-width-thick) solid var(--color-border-blue);
+    border-radius: var(--border-radius);
+    border: var(--border);
     padding: var(--spacing-small) var(--spacing-medium);
     margin-bottom: 15px;
 }
 
 #bloglinks {
     background-color: var(--color-bg-light-blue);
-    border-radius: var(--radius-large);
-    border: var(--border-width-thick) solid var(--color-border-blue);
+    border-radius: var(--border-radius);
+    border: var(--border);
     height: 200px;
     overflow-y: auto;
     padding: var(--spacing-small) 30px var(--spacing-medium);
@@ -407,8 +408,8 @@ ul li a.active {
 
 #updates {
     background-image: var(--gradient-blue);
-    border-radius: var(--radius-large);
-    border: var(--border-width-thick) solid var(--color-border-blue);
+    border-radius: var(--border-radius);
+    border: var(--border);
     padding: 5px 20px 20px;
     height: 250px;
     overflow-y: auto;
@@ -417,8 +418,8 @@ ul li a.active {
 
 #projects {
     background-image: var(--gradient-blue);
-    border-radius: var(--radius-large);
-    border: var(--border-width-thick) solid var(--color-border-blue);
+    border-radius: var(--border-radius);
+    border: var(--border);
     text-align: left;
     height: 250px;
     overflow-y: auto;
@@ -436,8 +437,8 @@ ul li a.active {
     max-width: 100%;
     height: auto;
     display: block;
-    border-radius: var(--radius-large);
-    border: var(--border-width-medium) solid #003399;
+    border-radius: var(--border-radius);
+    border: var(--border);
 }
 
 #pet {
@@ -445,8 +446,8 @@ ul li a.active {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    border-radius: var(--radius-large);
-    border: var(--border-width-medium) solid #003399;
+    border-radius: var(--border-radius);
+    border: var(--border);
     text-align: center;
     overflow: hidden;
     padding: 0.5%;
@@ -461,7 +462,7 @@ ul li a.active {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    border-radius: var(--radius-large);
+    border-radius: var(--border-radius);
 
     height: 320px;
     overflow-y: hidden;
@@ -475,19 +476,19 @@ ul li a.active {
     height: auto;
     padding: 3px;
     margin: 3px;
-    border-radius: var(--radius-large);
+    border-radius: var(--border-radius);
 }
 
 #photos img:hover {
-    border: var(--border-width-medium) solid var(--color-light-blue);
+    border: var(--border);
 }
 
 #photography,
 #digitalart,
 #otherstuff {
     background-image: var(--gradient-blue);
-    border-radius: var(--radius-large);
-    border: var(--border-width-thick) solid var(--color-border-blue);
+    border-radius: var(--border-radius);
+    border: var(--border);
     padding: 30px 40px;
     margin-bottom: 15px;
 }
@@ -542,7 +543,7 @@ ul li a.active {
 .mid-about-text span {
     background-color: var(--color-text-white);
     padding: 0 var(--spacing-small);
-    border-radius: var(--radius-large);
+    border-radius: var(--border-radius);
     position: relative;
     z-index: 2;
     padding-top: 5px;
@@ -557,8 +558,8 @@ ul li a.active {
     justify-content: space-between;
     align-items: center;
     background-image: var(--gradient-nav);
-    border-radius: var(--radius-large);
-    border: var(--border-width-thick) solid var(--color-border-blue);
+    border-radius: var(--border-radius);
+    border: var(--border);
     border-bottom-left-radius: 0;
     padding: 15px 25px;
     margin-bottom: 15px;
@@ -585,8 +586,8 @@ ul li a.active {
 .blog-post-text {
     flex: 2;
     background-image: var(--gradient-blue);
-    border-radius: var(--radius-large);
-    border: var(--border-width-thick) solid var(--color-border-blue);
+    border-radius: var(--border-radius);
+    border: var(--border);
     padding: 20px 30px;
     min-width: 0;
 }
@@ -598,8 +599,8 @@ ul li a.active {
 .blog-post-aside {
     flex: 1;
     background-image: var(--gradient-blue);
-    border-radius: var(--radius-large);
-    border: var(--border-width-thick) solid var(--color-border-blue);
+    border-radius: var(--border-radius);
+    border: var(--border);
     padding: 20px;
     text-align: center;
     min-width: 0;
@@ -627,7 +628,7 @@ ul li a.active {
     display: flex;
     align-items: flex-start;
     gap: 10px;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-top: var(--border);
     padding-top: 10px;
 }
 
@@ -685,7 +686,7 @@ button {
     font-family: var(--font-family-main);
     font-size: var(--font-size-small);
     padding: 8px 16px;
-    border: var(--border-width-medium) solid var(--color-border-blue);
+    border: var(--border);
     border-radius: var(--radius-small);
     cursor: pointer;
     transition: all 0.2s;
