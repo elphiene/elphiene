@@ -1,3 +1,14 @@
 CLAUDE.md
 .claude/
 PLAN.md
+
+# Raw/original media — use web/ compressed versions instead
+*.HEIC
+*.heic
+*.MOV
+*.mov
+*.MP4
+*.mp4
+# Raw JPEGs outside web/ subfolder — exclude oversized originals
+images/blog-*/[0-9]*.jpeg
+images/blog-*/*.JPG
