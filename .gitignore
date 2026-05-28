@@ -12,3 +12,7 @@ PLAN.md
 # Raw JPEGs outside web/ subfolder — exclude oversized originals
 images/blog-*/[0-9]*.jpeg
 images/blog-*/*.JPG
+
+# Claude Code session planning notes
+CLAUDE_CODE_HANDOFF.md
+STATUS_SETUP.md
