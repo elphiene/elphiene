@@ -9,9 +9,14 @@ PLAN.md
 *.mov
 *.MP4
 *.mp4
+*.avi
+*.AVI
 # Raw JPEGs outside web/ subfolder — exclude oversized originals
 images/blog-*/[0-9]*.jpeg
 images/blog-*/*.JPG
+# Camera dump folders with raw/video files
+images/chamera/
+images/ntdswitch/
 
 # Claude Code session planning notes
 CLAUDE_CODE_HANDOFF.md
