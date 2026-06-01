@@ -47,10 +47,10 @@
     --spacing-xlarge: 60px;
     --spacing-xxlarge: 100px;
 
-    --border: 3px solid var(--color-border-blue);
-    --border-thick: 5px solid var(--color-border-blue);
+    --border: 2px solid white;
+    --border-thick: 2px solid white;
     --border-thin: 1px solid rgba(255, 255, 255, 0.15);
-    --border-radius: 10px;
+    --border-radius: 5px;
 
     --font-family-main: WDXL Lubrifont SC;
     --font-size-small: 14px;
@@ -677,6 +677,82 @@ ul li a.active {
     opacity: 0.5;
     padding-left: 0;
     font-style: italic;
+}
+
+/* ===================================
+   COMMENTS
+   =================================== */
+
+#comments-section {
+    background-image: var(--gradient-blue);
+    border-radius: var(--border-radius);
+    border: var(--border-thick);
+    padding: 20px 30px;
+    margin-bottom: 20px;
+}
+
+#comments-section h3 {
+    margin: 0 0 15px 0;
+    padding-left: 0;
+}
+
+.comment-entry {
+    border-top: var(--border-thin);
+    padding-top: 12px;
+    margin-top: 12px;
+}
+
+.comment-entry:first-child {
+    border-top: none;
+    margin-top: 0;
+}
+
+.comment-date {
+    font-size: var(--font-size-small);
+    opacity: 0.6;
+    margin-left: 8px;
+}
+
+.comment-entry p {
+    margin: 6px 0 0;
+    font-size: var(--font-size-small);
+}
+
+#comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    border-top: var(--border-thin);
+    padding-top: 15px;
+}
+
+#comment-form input,
+#comment-form textarea {
+    background-color: #082361;
+    color: var(--color-text-white);
+    border: var(--border);
+    border-radius: var(--border-radius);
+    padding: 8px 12px;
+    font-family: var(--font-family-main);
+    font-size: var(--font-size-small);
+    resize: vertical;
+}
+
+#comment-form textarea {
+    min-height: 80px;
+}
+
+#comment-form input::placeholder,
+#comment-form textarea::placeholder {
+    color: var(--color-text-white);
+    opacity: 0.5;
+}
+
+#comment-status {
+    font-size: var(--font-size-small);
+    opacity: 0.7;
+    margin: 0;
 }
 
 /* ===================================

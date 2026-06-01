@@ -118,6 +118,39 @@ export default {
             return new Response(null, { headers: CORS });
         }
 
+        // Comments: list for a post
+        if (url.pathname === "/comments" && request.method === "GET") {
+            const post = url.searchParams.get("post") || "";
+            if (!post)
+                return new Response("post required", { status: 400, headers: CORS });
+            const { results } = await env.DB.prepare(
+                "SELECT name, message, created_at FROM comments WHERE post = ? ORDER BY created_at ASC LIMIT 200"
+            ).bind(post).all();
+            return Response.json(results, { headers: CORS });
+        }
+
+        // Comments: submit
+        if (url.pathname === "/comment" && request.method === "POST") {
+            let body;
+            try { body = await request.json(); }
+            catch { return new Response("Bad request", { status: 400, headers: CORS }); }
+
+            const post = (body.post || "").trim();
+            const name = (body.name || "").trim();
+            const message = (body.message || "").trim();
+
+            if (!post || !name || !message)
+                return new Response("post, name and message required", { status: 400, headers: CORS });
+            if (name.length > 50 || message.length > 500 || post.length > 100)
+                return new Response("Too long", { status: 400, headers: CORS });
+
+            await env.DB.prepare(
+                "INSERT INTO comments (post, name, message, created_at) VALUES (?, ?, ?, ?)"
+            ).bind(post, name, message, new Date().toISOString()).run();
+
+            return new Response("OK", { headers: CORS });
+        }
+
         // Guestbook: list entries
         if (url.pathname === "/entries" && request.method === "GET") {
             const { results } = await env.DB.prepare(
