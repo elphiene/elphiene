@@ -68,6 +68,102 @@
             </div>
         </div>
 
+        <div id="comments-section">
+            <h3>comments</h3>
+            <div id="comments-list"></div>
+            <form id="comment-form">
+                <input type="text" id="comment-name" placeholder="name" maxlength="50" required />
+                <textarea id="comment-message" placeholder="leave a comment!" maxlength="500" required></textarea>
+                <button type="submit">submit</button>
+                <p id="comment-status"></p>
+            </form>
+        </div>
+        <script>
+            (function () {
+                const WORKER =
+                    "https://elphiene-guestbook.headsinthecloudsmct.workers.dev";
+                const slug =
+                    location.pathname
+                        .replace(/^\//, "")
+                        .replace(/\.html$/, "") || "blog";
+
+                function esc(s) {
+                    return s
+                        .replace(/&/g, "&amp;")
+                        .replace(/</g, "&lt;")
+                        .replace(/>/g, "&gt;")
+                        .replace(/"/g, "&quot;");
+                }
+
+                async function loadComments() {
+                    const list = document.getElementById("comments-list");
+                    try {
+                        const res = await fetch(
+                            `${WORKER}/comments?post=${encodeURIComponent(slug)}`
+                        );
+                        const data = await res.json();
+                        if (!data.length) {
+                            list.innerHTML =
+                                "<p style='opacity:0.5'>no comments yet. be the first!</p>";
+                            return;
+                        }
+                        list.innerHTML = data
+                            .map(
+                                (c) =>
+                                    `<div class="comment-entry">` +
+                                    `<strong>${esc(c.name)}</strong>` +
+                                    `<span class="comment-date">${new Date(c.created_at).toLocaleDateString("en-AU")}</span>` +
+                                    `<p>${esc(c.message)}</p>` +
+                                    `</div>`
+                            )
+                            .join("");
+                    } catch {
+                        list.innerHTML =
+                            "<p style='opacity:0.5'>couldn't load comments.</p>";
+                    }
+                }
+
+                document
+                    .getElementById("comment-form")
+                    .addEventListener("submit", async function (e) {
+                        e.preventDefault();
+                        const name = document
+                            .getElementById("comment-name")
+                            .value.trim();
+                        const message = document
+                            .getElementById("comment-message")
+                            .value.trim();
+                        const status =
+                            document.getElementById("comment-status");
+                        status.textContent = "submitting...";
+                        try {
+                            const res = await fetch(`${WORKER}/comment`, {
+                                method: "POST",
+                                headers: { "Content-Type": "application/json" },
+                                body: JSON.stringify({
+                                    post: slug,
+                                    name,
+                                    message,
+                                }),
+                            });
+                            if (res.ok) {
+                                status.textContent = "comment posted!";
+                                document
+                                    .getElementById("comment-form")
+                                    .reset();
+                                loadComments();
+                            } else {
+                                status.textContent = await res.text();
+                            }
+                        } catch {
+                            status.textContent = "something went wrong :(";
+                        }
+                    });
+
+                loadComments();
+            })();
+        </script>
+
         <div id="footer">
             <img src="images/favicon.png" height="20px" alt="favicon" />
             elphiene |
