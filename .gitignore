@@ -1,3 +1,4 @@
+node_modules/
 CLAUDE.md
 .claude/
 PLAN.md
@@ -17,6 +18,9 @@ images/blog-*/*.JPG
 # Camera dump folders with raw/video files
 images/chamera/
 images/ntdswitch/
+
+# TTS-generated audio (force-added by pre-commit hook — don't add manually)
+audio/*.mp3
 
 # Claude Code session planning notes
 CLAUDE_CODE_HANDOFF.md
