@@ -344,13 +344,16 @@ ul li a.active {
 }
 
 .blog-preview {
+    background-color: #0099ff;
     position: relative;
     height: 250px;
     overflow: hidden;
     border-radius: var(--border-radius);
     width: 90%;
     margin: 0 auto;
+    padding: 5px;
     border: var(--border);
+    text-align: center;
 }
 
 .preview-link {
@@ -578,6 +581,31 @@ ul li a.active {
 
 .blog-post-title-bar a img {
     display: block;
+}
+
+.tts-player {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-medium);
+    background: rgba(0, 0, 102, 0.55);
+    border: var(--border-thin);
+    border-radius: var(--border-radius);
+    padding: 8px 20px;
+    margin-bottom: 15px;
+    font-size: var(--font-size-small);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--color-text-white);
+}
+
+.tts-player span {
+    white-space: nowrap;
+    opacity: 0.7;
+}
+
+.tts-player audio {
+    flex: 1;
+    min-width: 0;
+    height: 28px;
 }
 
 .blog-post-layout {
